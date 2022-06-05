@@ -13,7 +13,7 @@ const Nav = () => {
           <Link href="/about" passHref>
             <p className="hover:text-navy cursor-pointer">about</p>
           </Link>
-          <Link href="/web-3" passHref>
+          <Link href="/web3" passHref>
             <p className="hover:text-navy cursor-pointer">web 3.0</p>
           </Link>
           <Link href="/dad-dev" passHref>
