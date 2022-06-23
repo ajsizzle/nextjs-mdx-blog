@@ -8,13 +8,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Alexander J</title>
       </Head>
-
-      <div className="container">
-        <Nav />
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
+      <Nav />
+      <main>
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }

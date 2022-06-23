@@ -6,23 +6,26 @@ import Image from "next/image";
 
 export default function Home({ posts }) {
   return (
-    <div className="mt-5">
+    <div className="container flex items-center flex-col px-4 mx-auto mt-10 space-y-12">
       {posts.map((post, index) => (
         <Link href={"/blog/" + post.slug} passHref key={index}>
-          <div className="card mb-3 pointer" style={{ maxWidth: "540px" }}>
-            <div className="row g-0">
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">{post.frontMatter.title}</h5>
-                  <p className="card-text">{post.frontMatter.description}</p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      {post.frontMatter.date}
-                    </small>
-                  </p>
+          <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white hover:cursor-pointer">
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">
+                {post.frontMatter.title}
+                <div className="text-grey-700 text-base">
+                  {post.frontMatter.description}
+                  <div className="text-xs italic">
+                    {post.frontMatter.date}
+                    <div className="px-6 py-4">
+                      <span className="inline-block bg-gray rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                        #{post.frontMatter.tags}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="col-md-4 m-auto">
+              {/* <div className="mx-auto">
                 <Image
                   src={post.frontMatter.thumbnailUrl}
                   className="img-fluid mt-1 rounded-start"
@@ -31,7 +34,7 @@ export default function Home({ posts }) {
                   height={400}
                   objectFit="cover"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </Link>
